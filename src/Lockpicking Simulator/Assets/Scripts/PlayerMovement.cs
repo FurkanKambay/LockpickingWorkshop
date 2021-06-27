@@ -14,13 +14,11 @@ namespace Game
 
         private void Awake()
         {
-            Debug.Assert(Camera.main != null, "Camera.main is null");
-            camera = Camera.main.transform;
+            camera = GetComponentInChildren<Camera>().transform;
             characterController = GetComponent<CharacterController>();
         }
 
         private void OnEnable() => Cursor.lockState = CursorLockMode.Locked;
-        private void OnDisable() => Cursor.lockState = CursorLockMode.None;
 
         private void Update()
         {
