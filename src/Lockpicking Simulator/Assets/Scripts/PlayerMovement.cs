@@ -1,5 +1,4 @@
 using Game.Helpers;
-using UnityEditor;
 using UnityEngine;
 
 namespace Game
@@ -31,13 +30,12 @@ namespace Game
 
         private void Move()
         {
-            float speed = MovementSpeed ;
             float x = Input.GetAxisRaw("Horizontal");
             float y = Input.GetAxisRaw("Vertical");
 
             Transform self = transform;
             Vector3 movement = (self.right * x) + (self.forward * y);
-            characterController.SimpleMove(movement.normalized * speed);
+            characterController.SimpleMove(movement.normalized * MovementSpeed);
         }
 
         private void Look()
@@ -49,8 +47,6 @@ namespace Game
             float targetEuler = camera.eulerAngles.x - mouseY;
             if (!(targetEuler > 90 && targetEuler < 270))
                 camera.eulerAngles = camera.eulerAngles.With(x: targetEuler > 90 ? targetEuler - 360 : targetEuler);
-
-            // camera.Rotate(Vector3.left * mouseY);
         }
     }
 }
