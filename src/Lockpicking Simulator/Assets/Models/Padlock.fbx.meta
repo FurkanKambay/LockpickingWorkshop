@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 68ff9ef4db9ffc64d9df094b92d1cdb7
+guid: 1b71f89e80b2c684980917dba36e8d5b
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
@@ -20,7 +20,7 @@ ModelImporter:
       name: Shackle material
     second: {fileID: 2100000, guid: e87af409058585f40a16a61641a37c52, type: 2}
   materials:
-    materialImportMode: 0
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -49,15 +49,15 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.1
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1
-    importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
     fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -100,7 +100,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.1
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 1
