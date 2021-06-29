@@ -954,11 +954,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 009b65d597464350b430bc9340c50a37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lockHoldOffset: {x: 0, y: 0, z: 0.15}
-  lockHoldRotation: {x: 0, y: 60, z: 90}
-  hookPickPrefab: {fileID: 4432974491224195334, guid: c873c0602325119499712a0bbc5de836, type: 3}
-  pickHoldOffset: {x: -0.02, y: -0.18, z: 0.004}
-  pickHoldRotation: {x: 0, y: 90, z: -90}
+  lockOffset: {x: 0, y: 0, z: 0.15}
+  lockRotation: {x: 0, y: 60, z: 90}
+  pickPrefab: {fileID: 4432974491224195334, guid: c873c0602325119499712a0bbc5de836, type: 3}
+  pickOffset: {x: -0.02, y: -0.18, z: 0.004}
+  pickRotation: {x: 0, y: 90, z: -90}
+  pickMoveSensitivity: 0.002
+  minPickDepth: -0.3
+  maxPickDepth: -0.05
 --- !u!1 &1982390547
 GameObject:
   m_ObjectHideFlags: 0
