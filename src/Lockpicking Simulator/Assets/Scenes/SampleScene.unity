@@ -399,7 +399,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30656
+  m_Name: pb_Mesh23648
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -954,10 +954,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 009b65d597464350b430bc9340c50a37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lockHoldOffset: {x: -0.05, y: 0, z: 0.2}
-  lockHoldRotation: {x: 0, y: 45, z: 90}
+  lockHoldOffset: {x: 0, y: 0, z: 0.15}
+  lockHoldRotation: {x: 0, y: 60, z: 90}
   hookPickPrefab: {fileID: 4432974491224195334, guid: c873c0602325119499712a0bbc5de836, type: 3}
-  pickHoldOffset: {x: -0.02, y: -0.4, z: 0.004}
+  pickHoldOffset: {x: -0.02, y: -0.18, z: 0.004}
   pickHoldRotation: {x: 0, y: 90, z: -90}
 --- !u!1 &1982390547
 GameObject:

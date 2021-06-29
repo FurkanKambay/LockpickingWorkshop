@@ -43,10 +43,8 @@ namespace Game
 
             currentPick.SetParent(lockTransform);
             currentPick.localPosition = pickHoldOffset;
-            // currentPick.position = lockTransform.TransformPoint(pickHoldOffset);
-            // Vector3(0.0028,0.028,-0.144)
-            // Vector3(0,90,-90)
-            currentPick.rotation = lockRotation * Quaternion.Euler(pickHoldRotation);
+            currentPick.localRotation = Quaternion.Euler(pickHoldRotation);
+            currentPick.localScale = Vector3.one;
             currentPick.gameObject.SetActive(true);
         }
 
