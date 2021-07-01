@@ -960,7 +960,7 @@ MonoBehaviour:
   pickOffset: {x: -0.02, y: -0.18, z: 0.004}
   pickRotation: {x: 0, y: 90, z: -90}
   pickMoveSensitivity: 0.002
-  minPickDepth: -0.3
+  minPickDepth: -0.2
   maxPickDepth: -0.05
 --- !u!1 &1982390547
 GameObject:

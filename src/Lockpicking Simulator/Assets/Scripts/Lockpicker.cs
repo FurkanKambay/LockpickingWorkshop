@@ -21,9 +21,11 @@ namespace Game
 
         private new Transform camera;
         private Interactor interactor;
+        private LockParts currentLock;
+        private Transform pickPivot;
+        private Transform currentPick;
         private Vector3 lockOriginalPosition;
         private Quaternion lockOriginalRotation;
-        private Transform currentPick;
 
         private void Awake()
         {
@@ -33,7 +35,8 @@ namespace Game
 
         private void Start()
         {
-            currentPick = Instantiate(pickPrefab);
+            pickPivot = new GameObject("Pick Pivot").transform;
+            currentPick = Instantiate(pickPrefab, pickPivot);
             currentPick.gameObject.SetActive(false);
         }
 
@@ -52,27 +55,30 @@ namespace Game
 
         public void StartPicking(Transform lockTransform)
         {
+            currentLock = lockTransform.GetComponent<LockParts>();
             lockOriginalPosition = lockTransform.position;
             lockOriginalRotation = lockTransform.rotation;
 
-            Vector3 lockPosition = camera.TransformPoint(lockOffset);
-            Quaternion lockRotation = camera.rotation * Quaternion.Euler(this.lockRotation);
-            lockTransform.position = lockPosition;
-            lockTransform.rotation = lockRotation;
+            lockTransform.position = camera.TransformPoint(lockOffset);
+            lockTransform.rotation = camera.rotation * Quaternion.Euler(lockRotation);
 
-            currentPick.SetParent(lockTransform);
+            pickPivot.SetParent(lockTransform);
+            pickPivot.localPosition = Vector3.zero;
+            pickPivot.localRotation = Quaternion.identity;
+            pickPivot.localScale = Vector3.one * 1.3f;
+
             currentPick.localPosition = pickOffset;
             currentPick.localRotation = Quaternion.Euler(pickRotation);
-            currentPick.localScale = Vector3.one;
             currentPick.gameObject.SetActive(true);
         }
 
         public void StopPicking()
         {
             currentPick.gameObject.SetActive(false);
-            currentPick.parent = null;
+            pickPivot.parent = null;
             interactor.Interactee.position = lockOriginalPosition;
             interactor.Interactee.rotation = lockOriginalRotation;
+            currentLock.ResetPlugRotation();
         }
     }
 }
