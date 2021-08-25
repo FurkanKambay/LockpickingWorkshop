@@ -16,6 +16,7 @@ namespace Game
 
         [Header("Controls")]
         [SerializeField] private float pickMoveSensitivity;
+        [SerializeField] private float pickRotateSensitivity;
         [SerializeField] private float minPickDepth;
         [SerializeField] private float maxPickDepth;
 
@@ -42,7 +43,12 @@ namespace Game
 
         private void Update()
         {
-            if (currentPick.gameObject.activeSelf)
+            if (!currentPick.gameObject.activeSelf)
+                return;
+
+            if (Input.GetKey(KeyCode.LeftAlt))
+                RotatePick(Input.GetAxis("Mouse X") * pickRotateSensitivity);
+            else
                 MovePick(Input.GetAxis("Mouse Y") * pickMoveSensitivity);
         }
 
@@ -51,6 +57,11 @@ namespace Game
             Vector3 pickPosition = currentPick.localPosition;
             pickPosition = pickPosition.With(y: Mathf.Clamp(pickPosition.y + amount, minPickDepth, maxPickDepth));
             currentPick.localPosition = pickPosition;
+        }
+
+        private void RotatePick(float amount)
+        {
+            currentLock.transform.Rotate(Vector3.right, amount, Space.Self);
         }
 
         public void StartPicking(Transform lockTransform)
