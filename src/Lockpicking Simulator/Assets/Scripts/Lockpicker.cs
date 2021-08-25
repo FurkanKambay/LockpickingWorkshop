@@ -1,4 +1,4 @@
-﻿using Game.Helpers;
+using Game.Helpers;
 using UnityEngine;
 
 namespace Game
