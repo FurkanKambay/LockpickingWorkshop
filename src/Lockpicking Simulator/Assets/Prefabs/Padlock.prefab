@@ -28,8 +28,8 @@ MonoBehaviour:
   plug: {fileID: 7381696696653136459}
   pinContainer: {fileID: 537815400376322939}
   pinPrefab: {fileID: 5703093120738440723, guid: dcb6dad0c0d139348b712176eb489b4b, type: 3}
+  pinMargin: {x: 0, y: 0.01, z: 0}
   pinCount: 5
-  pinMargin: 0.01
 --- !u!1 &7861205653305687338
 GameObject:
   m_ObjectHideFlags: 0
@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7861205653305687338}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01, y: 0.02, z: 0.003}
+  m_LocalPosition: {x: -0.01, y: 0.02, z: 0.002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7235160962336205441}

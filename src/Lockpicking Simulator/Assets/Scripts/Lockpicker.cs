@@ -48,15 +48,16 @@ namespace Game
 
             if (Input.GetKey(KeyCode.LeftAlt))
                 RotatePick(Input.GetAxis("Mouse X") * pickRotateSensitivity);
-            else
-                MovePick(Input.GetAxis("Mouse Y") * pickMoveSensitivity);
+            else if (Input.GetKeyDown(KeyCode.A))
+                MovePick(+1);
+            else if (Input.GetKeyDown(KeyCode.D))
+                MovePick(-1);
         }
 
-        private void MovePick(float amount)
+        private void MovePick(int direction)
         {
-            Vector3 pickPosition = currentPick.localPosition;
-            pickPosition = pickPosition.With(y: Mathf.Clamp(pickPosition.y + amount, minPickDepth, maxPickDepth));
-            currentPick.localPosition = pickPosition;
+            Vector3 pinMargin = currentLock.GetComponent<LockParts>().PinMargin;
+            currentPick.localPosition += pinMargin * direction;
         }
 
         private void RotatePick(float amount)
@@ -74,9 +75,9 @@ namespace Game
             lockTransform.rotation = camera.rotation * Quaternion.Euler(lockRotation);
 
             pickPivot.SetParent(lockTransform);
-            pickPivot.localPosition = Vector3.zero;
+            pickPivot.localPosition = Vector3.zero.With(y: 0.004f);
             pickPivot.localRotation = Quaternion.identity;
-            pickPivot.localScale = Vector3.one * 1.3f;
+            pickPivot.localScale = Vector3.one;
 
             currentPick.localPosition = pickOffset;
             currentPick.localRotation = Quaternion.Euler(pickRotation);

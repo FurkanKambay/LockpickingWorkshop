@@ -957,7 +957,7 @@ MonoBehaviour:
   lockOffset: {x: 0.02, y: 0, z: 0.08}
   lockRotation: {x: 0, y: 0, z: 90}
   pickPrefab: {fileID: 4432974491224195334, guid: c873c0602325119499712a0bbc5de836, type: 3}
-  pickOffset: {x: -0.02, y: -0.18, z: 0.004}
+  pickOffset: {x: -0.02, y: -0.18, z: 0.0015}
   pickRotation: {x: 0, y: 90, z: -90}
   pickMoveSensitivity: 0.002
   pickRotateSensitivity: 0.2

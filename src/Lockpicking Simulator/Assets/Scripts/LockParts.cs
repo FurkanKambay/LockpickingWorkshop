@@ -6,6 +6,9 @@ namespace Game
 {
     public class LockParts : MonoBehaviour
     {
+        public int PinCount => pinCount;
+        public Vector3 PinMargin => pinMargin;
+
         public float PlugRotation
         {
             get => plug.localEulerAngles.y;
@@ -17,11 +20,12 @@ namespace Game
         [Header("Pin Generation")]
         [SerializeField] Transform pinContainer;
         [SerializeField] private Transform pinPrefab;
-        [SerializeField] private int pinCount;
-        [SerializeField] private float pinMargin;
+        [SerializeField] private Vector3 pinMargin;
+        [SerializeField, Range(1, 10)] private int pinCount;
 
         private float initialPlugRotation;
         private List<Transform> pins;
+        private bool pinsUpdated;
 
         private void Awake()
         {
@@ -37,13 +41,23 @@ namespace Game
 
         private void Update()
         {
-            for (int i = 0; i < pinCount; i++)
+            if (pinsUpdated)
             {
-                if (i >= pins.Count)
-                    pins.Add(Instantiate(pinPrefab, pinContainer));
-                pins[i].localPosition = Vector3.up * (i * pinMargin);
+                pins.ForEach(p => Destroy(p.gameObject));
+                pins.Clear();
+
+                for (int i = 0; i < pinCount; i++)
+                {
+                    var pin = Instantiate(pinPrefab, pinContainer);
+                    pin.localPosition = pinMargin * i;
+                    pins.Add(pin);
+                }
+
+                pinsUpdated = false;
             }
         }
+
+        private void OnValidate() => pinsUpdated = true;
 
         public void ResetPlugRotation() => PlugRotation = initialPlugRotation;
     }
