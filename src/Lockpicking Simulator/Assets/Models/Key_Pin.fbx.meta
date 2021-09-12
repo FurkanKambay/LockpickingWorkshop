@@ -1,21 +1,11 @@
 fileFormatVersion: 2
-guid: a8668e994d5813748a93f983cd968dc7
+guid: 7f54c5b891aeea34f88d6a6e876d488b
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Pick blade material
-    second: {fileID: 2100000, guid: a15c8d6fe642a504f98fde0acf0cf412, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Pick handle material
-    second: {fileID: 2100000, guid: db5c4e0b558ef9f458799b4d33f12f18, type: 2}
+  externalObjects: {}
   materials:
-    materialImportMode: 2
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -50,9 +40,9 @@ ModelImporter:
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1
-    importBlendShapes: 0
-    importCameras: 0
-    importLights: 0
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0

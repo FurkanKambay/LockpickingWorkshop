@@ -62,7 +62,7 @@ namespace Game
 
         private void RotatePick(float amount)
         {
-            currentLock.transform.Rotate(Vector3.right, amount, Space.Self);
+            currentLock.transform.Rotate(Vector3.up, amount, Space.Self);
         }
 
         public void StartPicking(Transform lockTransform)
@@ -75,12 +75,9 @@ namespace Game
             lockTransform.rotation = camera.rotation * Quaternion.Euler(lockRotation);
 
             pickPivot.SetParent(lockTransform);
-            pickPivot.localPosition = Vector3.zero.With(y: 0.004f);
-            pickPivot.localRotation = Quaternion.identity;
-            pickPivot.localScale = Vector3.one;
+            pickPivot.localPosition = pickOffset;
+            pickPivot.localRotation = Quaternion.Euler(pickRotation);
 
-            currentPick.localPosition = pickOffset;
-            currentPick.localRotation = Quaternion.Euler(pickRotation);
             currentPick.gameObject.SetActive(true);
         }
 

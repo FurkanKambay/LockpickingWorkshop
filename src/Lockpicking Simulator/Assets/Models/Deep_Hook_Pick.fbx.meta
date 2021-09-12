@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d64185d6d0743a94f9dc4315a14d1517
+guid: 0103806c029451d429bb5eac84c07026
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
@@ -7,18 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Body Material
-    second: {fileID: 2100000, guid: c4ca7d35e5b3f624aa27499612afaef7, type: 2}
+      name: Pick blade material
+    second: {fileID: 2100000, guid: 2dd96e849b8cf87479fb8766d0cd0949, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Plug Material
-    second: {fileID: 2100000, guid: ef56e7e78df1c3a42b420ca4d383e5e0, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Shackle Material
-    second: {fileID: 2100000, guid: ea24aeb78f43a9440a339f9b701e1df6, type: 2}
+      name: Pick handle material
+    second: {fileID: 2100000, guid: 22e5056d040e924458c774f8b93a37fa, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
