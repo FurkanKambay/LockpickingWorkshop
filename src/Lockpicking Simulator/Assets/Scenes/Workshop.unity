@@ -134,10 +134,6 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 1710379623720666206, guid: 54f18d8f58a23ad4a8092f2fe888cd7c, type: 3}
-      propertyPath: pinMargin.z
-      value: 0.00438
-      objectReference: {fileID: 0}
     - target: {fileID: 5842985607902944592, guid: 54f18d8f58a23ad4a8092f2fe888cd7c, type: 3}
       propertyPath: m_Name
       value: Padlock (2)
@@ -469,7 +465,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28236
+  m_Name: pb_Mesh23652
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -817,17 +813,13 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 1710379623720666206, guid: 54f18d8f58a23ad4a8092f2fe888cd7c, type: 3}
-      propertyPath: pinMargin.z
-      value: 0.00438
-      objectReference: {fileID: 0}
     - target: {fileID: 5842985607902944592, guid: 54f18d8f58a23ad4a8092f2fe888cd7c, type: 3}
       propertyPath: m_Name
       value: Padlock (3)
       objectReference: {fileID: 0}
     - target: {fileID: 6511541915684833258, guid: 54f18d8f58a23ad4a8092f2fe888cd7c, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6511541915684833258, guid: 54f18d8f58a23ad4a8092f2fe888cd7c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -973,12 +965,11 @@ MonoBehaviour:
   lockOffset: {x: 0, y: 0, z: 0.05}
   lockRotation: {x: 0, y: 0, z: 0}
   pickPrefab: {fileID: 6933321056744132421, guid: 8583ed6240de0ce4d8e8bc315bcdb524, type: 3}
-  pickOffset: {x: -0.0002, y: -0.005, z: -0.04}
+  pickOffset: {x: -0.0002, y: -0.005, z: -0.039}
   pickRotation: {x: 0, y: 0, z: 0}
-  pickMoveSensitivity: 0.002
-  pickRotateSensitivity: 0.2
-  minPickDepth: -0.2
-  maxPickDepth: -0.05
+  lockRotateSensitivity: 0.2
+  lockZoomSensitivity: -0.002
+  pickRotateSensitivity: -0.1
 --- !u!1 &1982390547
 GameObject:
   m_ObjectHideFlags: 0
@@ -1913,10 +1904,6 @@ PrefabInstance:
     - target: {fileID: -2107584589844220181, guid: 54f18d8f58a23ad4a8092f2fe888cd7c, type: 3}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1710379623720666206, guid: 54f18d8f58a23ad4a8092f2fe888cd7c, type: 3}
-      propertyPath: pinMargin.z
-      value: 0.00438
       objectReference: {fileID: 0}
     - target: {fileID: 5842985607902944592, guid: 54f18d8f58a23ad4a8092f2fe888cd7c, type: 3}
       propertyPath: m_Name

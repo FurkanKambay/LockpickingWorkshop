@@ -15,10 +15,9 @@ namespace Game
         [SerializeField] private Vector3 pickRotation;
 
         [Header("Controls")]
-        [SerializeField] private float pickMoveSensitivity;
+        [SerializeField] private float lockRotateSensitivity;
+        [SerializeField] private float lockZoomSensitivity;
         [SerializeField] private float pickRotateSensitivity;
-        [SerializeField] private float minPickDepth;
-        [SerializeField] private float maxPickDepth;
 
         private new Transform camera;
         private Interactor interactor;
@@ -47,22 +46,36 @@ namespace Game
                 return;
 
             if (Input.GetKey(KeyCode.LeftAlt))
-                RotatePick(Input.GetAxis("Mouse X") * pickRotateSensitivity);
-            else if (Input.GetKeyDown(KeyCode.A))
-                MovePick(+1);
-            else if (Input.GetKeyDown(KeyCode.D))
-                MovePick(-1);
+            {
+                RotateLock(Input.GetAxisRaw("Mouse X") * lockRotateSensitivity);
+                Zoom(Input.mouseScrollDelta.y * lockZoomSensitivity);
+            }
+            else if (Input.GetKeyDown(KeyCode.W))
+                MovePick(currentLock.PinMargin);
+            else if (Input.GetKeyDown(KeyCode.S))
+                MovePick(-currentLock.PinMargin);
+            else
+                RotatePick(Input.GetAxisRaw("Mouse Y") * pickRotateSensitivity);
         }
 
-        private void MovePick(int direction)
+        private void MovePick(float amount)
         {
-            Vector3 pinMargin = currentLock.GetComponent<LockParts>().PinMargin;
-            currentPick.localPosition += pinMargin * direction;
+            currentPick.Translate(Vector3.zero.With(z: amount));
         }
 
         private void RotatePick(float amount)
         {
-            currentLock.transform.Rotate(Vector3.up, amount, Space.Self);
+            currentPick.Rotate(Vector3.right, amount);
+        }
+
+        private void RotateLock(float amount)
+        {
+            currentLock.transform.Rotate(Vector3.up, amount);
+        }
+
+        private void Zoom(float amount)
+        {
+            currentLock.transform.Translate(0, 0, amount, camera);
         }
 
         public void StartPicking(Transform lockTransform)

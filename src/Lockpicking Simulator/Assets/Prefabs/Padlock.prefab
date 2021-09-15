@@ -58,7 +58,7 @@ MonoBehaviour:
   plug: {fileID: 6360453049853144864}
   pinContainer: {fileID: 6675180956028302696}
   pinPrefab: {fileID: 7542717357176819925, guid: adfc2ba5ab014fd42850ae642fecacdf, type: 3}
-  pinMargin: {x: 0, y: 0, z: 0.04}
+  pinMargin: 0.00438
   pinCount: 5
 --- !u!1001 &6761905947524423681
 PrefabInstance:

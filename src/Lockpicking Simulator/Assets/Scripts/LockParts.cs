@@ -7,7 +7,7 @@ namespace Game
     public class LockParts : MonoBehaviour
     {
         public int PinCount => pinCount;
-        public Vector3 PinMargin => pinMargin;
+        public float PinMargin => pinMargin;
 
         public float PlugRotation
         {
@@ -20,7 +20,7 @@ namespace Game
         [Header("Pin Generation")]
         [SerializeField] Transform pinContainer;
         [SerializeField] private Transform pinPrefab;
-        [SerializeField] private Vector3 pinMargin;
+        [SerializeField] private float pinMargin;
         [SerializeField, Range(1, 10)] private int pinCount;
 
         private float initialPlugRotation;
@@ -49,7 +49,7 @@ namespace Game
                 for (int i = 0; i < pinCount; i++)
                 {
                     var pin = Instantiate(pinPrefab, pinContainer);
-                    pin.localPosition = pinMargin * i;
+                    pin.localPosition = Vector3.zero.With(z: pinMargin * i);
                     pins.Add(pin);
                 }
 
