@@ -20,6 +20,7 @@ namespace Game
         [SerializeField] private float pickRotateSensitivity;
 
         private new Transform camera;
+        private GameObject aotCamera;
         private Interactor interactor;
         private LockParts currentLock;
         private Transform pickPivot;
@@ -31,6 +32,7 @@ namespace Game
         {
             interactor = GetComponent<Interactor>();
             camera = GetComponentInChildren<Camera>().transform;
+            aotCamera = camera.GetChild(0).gameObject;
         }
 
         private void Start()
@@ -45,7 +47,9 @@ namespace Game
             if (!currentPick.gameObject.activeSelf)
                 return;
 
-            if (Input.GetKey(KeyCode.LeftAlt))
+            if (Input.GetKeyDown(KeyCode.X))
+                aotCamera.SetActive(!aotCamera.activeSelf);
+            else if (Input.GetKey(KeyCode.LeftAlt))
             {
                 RotateLock(Input.GetAxisRaw("Mouse X") * lockRotateSensitivity);
                 Zoom(Input.mouseScrollDelta.y * lockZoomSensitivity);
@@ -60,6 +64,7 @@ namespace Game
 
         private void MovePick(float amount)
         {
+            // TODO should always move relative to the plug
             currentPick.Translate(Vector3.zero.With(z: amount));
         }
 
